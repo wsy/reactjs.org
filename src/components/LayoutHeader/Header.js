@@ -7,6 +7,7 @@
 
 import Container from 'components/Container';
 import HeaderLink from './HeaderLink';
+import HeaderLanguage from './HeaderLanguage';
 import {Link} from 'gatsby';
 import React from 'react';
 import {colors, fonts, media} from 'theme';
@@ -175,37 +176,10 @@ const Header = ({location}: {location: Location}) => (
             to="/versions">
             v{version}
           </Link>
-          <Link
-            css={{
-              display: 'flex',
-              alignItems: 'center',
-              padding: '5px 10px',
-              whiteSpace: 'nowrap',
-              ...fonts.small,
-
-              ':hover': {
-                color: colors.brand,
-              },
-
-              ':focus': {
-                outline: 0,
-                backgroundColor: colors.lighter,
-                borderRadius: 15,
-              },
-            }}
-            to="/languages">
-            <LanguagesIcon />{' '}
-            <span
-              css={{
-                marginLeft: '0.5rem',
-
-                [media.lessThan('medium')]: {
-                  display: 'none',
-                },
-              }}>
-              Languages
-            </span>
+          <Link to="/languages">
+            <LanguagesIcon />
           </Link>
+          <HeaderLanguage />
           <a
             css={{
               padding: '5px 10px',
